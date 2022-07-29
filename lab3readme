@@ -1,0 +1,126 @@
+Name: Shashwat Rao
+
+I certify that I completed all of the work myself with no aid from anyone aside from the instructor or the undergraduate graders.
+
+README (Read me in the readme lol): the commands work in the following way.
+First to compile the program, run "make -r partx", where x is 1,2, or 3. These correspond to parts 1, 2, and 3 of the lab.
+
+COMMANDS: (enter these commands without the "")
+
+[folder path is the name of the path (including the folder name itself) to the folder seperated by / and should not be terminated by /. If it is, undefined behavior occurs]
+[file path is the name of the path (including the file name itself) to the file seperated by / and should not be terminated by /. If it is, undefined behavior occurs]
+[I tried to make these as similar to linux commands as possible, but sometimes it just didn't as you'll see in cp and mv]
+Whenever it asks you to enter the path from the root directory to the current folder or the folder that contains the current folder, don't include the root in the folder path
+ex: the folder path is 1/2 not ~/1/2
+
+cd -> enter the command "cd pathName"
+    The normal paths work and the "..", ".", "~", "-", and "" after the commands also work.
+    Don't use the command ".." on cd because undefined behavior can occur.
+
+ls -> enter the command "ls"
+    This command doesn't support any flags.
+
+pwd -> enter the command "pwd"
+    This command also doesn't support any other flags.
+
+cat -> enter the command "cat filePath"
+    This command doesn't support flags and if the file is above the current folder in the file directory, 
+    enter the path of the file from the root directory including the root directory, then follow the command and 
+    print the file path from the root directory, ommitting the ~
+
+rm -> enter the command "rm listOfFileNames"
+    The listOfFileNames should be seperated with spaces, and they should all be in the same folder. The names cannot be file paths.
+
+rmdir -> enter the command "rmdir listOfFolderNames"
+    The listOfFolderNames should be seperated with spaces, and they should all be in the same folder. The names cannot be folder paths.
+
+file -> enter the command "file nameOfFolder"
+    The nameOfFolder cannot be a file path, and it should be a file that does not exist.
+    You can alter the content in the file, but it just overwrites the previous content.
+
+help -> enter the command "help"
+
+cp -> for copying folders, enter the command "cpFolder". For copying files, enter the command "cpFile"
+    After entering thess commands, the command window will prompt you.
+    For copying Folders
+        First it will ask you information about the folder you wish to copy
+            First you will need to enter the name of the folder path, which is the path to the folder, but doesn't include the folder. This path has to exist.
+            Then you will need to enter the name of the folder you wish to copy. This folder has to exist.
+        Second it will ask you the name of the folder you wish to copy to
+            You will need to enter the name of the folder path, which is the path to the folder, but doesn't include the folder. You have to make sure that this folder path exists
+            Then you can enter the name of a folder that either exists in that folderPath or doesn't exist in that folderPath
+    For copying Files
+        First it will ask you information about the file you wish to copy
+            First you will need to enter the name of the file path, which is the path to the file, but doesn't include the file. This path has to exist.
+            Then you will need to enter the name of the file you wish to copy. This file has to exist.
+        Second it will ask you the name of the file you wish to copy to
+            You will need to enter the name of the file path, which is the path to the file, but doesn't include the file. You have to make sure that this file path exists
+            Then you can enter the name of a file that either exists in that filePath or doesn't exist in that filePath
+
+mv -> for moving folders, enter the command "mvFolder". For copying files, enter the command "mvFile"
+    Make sure that you are not in the folder that you are moving, or else undefined behavior can occur.
+    After entering thess commands, the command window will prompt you.
+    For moving Folders
+        First it will ask you information about the folder you wish to move
+            First you will need to enter the name of the folder path, which is the path to the folder, but doesn't include the folder. This path has to exist.
+            Then you will need to enter the name of the folder you wish to copy. This folder has to exist.
+        Second it will ask you the name of the folder you wish to move to
+            You will need to enter the name of the folder path, which is the path to the folder, but doesn't include the folder. You have to make sure that this folder path exists
+            Then you can enter the name of a folder that either exists in that folderPath or doesn't exist in that folderPath
+    For moving Files
+        First it will ask you information about the file you wish to move
+            First you will need to enter the name of the file path, which is the path to the file, but doesn't include the file. This path has to exist.
+            Then you will need to enter the name of the file you wish to copy. This file has to exist.
+        Second it will ask you the name of the file you wish to move to
+            You will need to enter the name of the file path, which is the path to the file, but doesn't include the file. You have to make sure that this file path exists
+            Then you can enter the name of a file that either exists in that filePath or doesn't exist in that filePath
+
+longestFolderName -> enter the command "longestFolderName"
+
+longestFileName -> enter the command "longestFileName"
+
+dirPrint -> enter the command "dirPrint"
+
+
+Part 1:
+
+Q1: My linked data structure was more of a tree, where each child of the root node was in an array that was part of the structure of the tree, and each child had a link to it's parent. Also the "data" that it held was files, and I decided that I would hold them as pointers to files instead of actual files.
+
+Q2: When I used the ls command, I said "Folders: Files:" on seperate lines. Whenever there were folders and file names to put in the list, the appeared, otherwise the list was barren.
+
+Q3: I think the terse implementations would be sort of possible because it's kinda like inserting a node, but I just inserted my nodes into an array. You could have a cool while statement to keep going until a certain condition, but it isn't really necessary, and, in my opinion, would be rather unecessary.
+
+Part 2:
+
+Q1: I chose to implement a function that finds the folder in the current folder with the longest name and prints that name with the length of the name, a function that finds the file with the longest name in the folder and prints that name with the length of the name, and lastly a function the prints out the number of files and folders within the current directory.
+I chose to implement these functions because they allowed me to take full advantage of the data structure that I had already and maybe for the users to then, in future implementations, by using sorting algorithms, put the folders in length order, or perhaps tweak them to give alphabetical order.
+
+Q2: I didn't use any extra data structures because the data structure that I had sufficed for the implementation of the above listed functions.
+
+Q3: I chose the current way to display the files and folders because the [] indicate the children of the current directory, because the children are stored as an array. 
+
+Part 3:
+
+Q1: finished. Check top of file or near top atleast.
+
+Q2: So I just iterated through the directory. Everytime I got to a file, I increased the file count by 1 as I added the file with the name to my fake file system
+I then kept the loop going until file counter was equal to or bigger than 64 or there were no more files/folders to read.
+
+Q3: The instructions just say a test directory, so imma just create one "test case"
+
+linux commands:
+mkdir folder
+cd folder
+mkdir dontCopy1
+touch copyThisFile1
+touch copyThisFile2
+touch copyThisFile3
+touch copyThisFile4
+mkdir dontCopy2
+
+Q4: Yes I did handle that case because I just did DIR *dir = opendir(path), where the path was the name of the path to the folder.
+I checked to see if dir was NULL/0, if it was, then I just printed a statement, but if it wasn't then I copied the file names.
+I think that these cases are our responsibility because they are easy to check. If we expect the user to know all of the times, exactly what to enter,
+It would make for a very confusing program that would always segfault and the user would always get confused because they would have to know a lot of things.
+By implementing this small thing, we lower that barrier of entry for the user to user our application because there is one less thing that they
+need to know to operate the program.
